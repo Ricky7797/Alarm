@@ -1,5 +1,4 @@
 #include <TimeLib.h>
-
 //Enter current hour
 int c_h=7;
 //Enter current minute
@@ -18,6 +17,13 @@ void setup() {
 void loop() {
 int hours=c_h+hour();
 int min=c_m+minute();
+
+if(hours==24){ 
+  hours=hours-24;
+}
+if(min==60){ 
+  min=min-60;
+}
 
 if(hours==a_h && min==a_m && second()==0){ 
   digitalWrite(5,HIGH);
