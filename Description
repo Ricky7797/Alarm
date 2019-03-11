@@ -1,0 +1,5 @@
+Using arduino and the library "<TimeLib.h>" this code runs as an alarm clock.
+The user starts by enter the current time (hour/minute) and desired alarm time (hour/minute).
+Then in the loop the current time is used with the hour and minute functions to keep track of the time.
+The first second the current time is equal to the desired time an alarm on pin 5 is set off and "BEEP!" is printed.
+When the hour/minute counters hit 24/60 they are reset.
