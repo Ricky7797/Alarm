@@ -1,0 +1,32 @@
+#include <TimeLib.h>
+
+//Enter current hour
+int c_h=7;
+//Enter current minute
+int c_m=56;
+//Enter alarm hour
+int a_h=7;
+//Enter current minute
+int a_m=57;
+
+void setup() {
+  // initialize serial communication at 9600 bits per second:
+  Serial.begin(9600);
+  pinMode(5,OUTPUT);
+}
+
+void loop() {
+int hours=c_h+hour();
+int min=c_m+minute();
+
+if(hours==a_h && min==a_m && second()==0){ 
+  digitalWrite(5,HIGH);
+  Serial.println("BEEP!");
+  delay(10000);
+  digitalWrite(5,LOW);
+}
+Serial.println(hours);
+Serial.println(min);
+
+delay(1000);
+}
